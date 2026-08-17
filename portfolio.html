@@ -4,103 +4,70 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio — Capibara Designs</title>
-  <meta name="description" content="Découvrez le portfolio de Capibara Designs : logos, moodboards, présentations PowerPoint et cartes de visite, photographiés avec amour par notre capybara.">
+  <meta name="description" content="Découvrez le portfolio de Capibara Designs dans le journal créatif : logos, moodboards, présentations PowerPoint et cartes de visite.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Capibara Designs">
+  <meta property="og:title" content="Portfolio — Capibara Designs">
+  <meta property="og:description" content="Journal créatif de Capibara Designs : logos, moodboards, présentations PowerPoint et cartes de visite.">
+  <meta property="og:image" content="https://capibara-designs.github.io/capibara-designs/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@400;500;600;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --cream:#FFF6EF;
-      --cream-deep:#FBEBDD;
-      --pink:#F4A9C5;
-      --pink-soft:#FCE0EB;
-      --pink-deep:#E88AAE;
-      --sage:#A9C9A4;
-      --sage-deep:#7FA876;
-      --sage-soft:#E4EFDF;
-      --plum:#4A3540;
-      --plum-soft:#8B7580;
-      --peach:#FFD9B8;
-      --white:#FFFFFF;
+      --cream:#FFF6EF; --cream-deep:#FBEBDD;
+      --pink:#F4A9C5; --pink-soft:#FCE0EB; --pink-deep:#E88AAE;
+      --sage:#A9C9A4; --sage-deep:#7FA876; --sage-soft:#E4EFDF;
+      --plum:#4A3540; --plum-soft:#8B7580;
+      --peach:#FFD9B8; --white:#FFFFFF;
+      --paper:#FFFCF8;
       --shadow:0 15px 40px rgba(74,53,64,.12);
     }
 
     *{box-sizing:border-box; margin:0; padding:0;}
-
-    html,body{
-      width:100%;
-      height:100%;
-      overflow:hidden;
-    }
-
-    body{
-      font-family:'Quicksand',sans-serif;
-      background:var(--cream);
-      color:var(--plum);
-    }
-
+    html,body{width:100%; height:100%; overflow:hidden;}
+    body{font-family:'Quicksand',sans-serif; background:var(--cream); color:var(--plum);}
     button,a{font:inherit;}
 
     /* ===== PAGE ===== */
     .portfolio-page{
-      width:100%;
-      height:100vh;
-      position:relative;
-      overflow:hidden;
-      isolation:isolate;
+      width:100%; height:100vh;
+      position:relative; overflow:hidden; isolation:isolate;
       background:
-        linear-gradient(rgba(255,246,239,.88), rgba(255,246,239,.88)),
+        linear-gradient(rgba(255,246,239,.9), rgba(255,246,239,.9)),
         url("logo.png") center center / cover no-repeat;
     }
 
     /* ===== BACKGROUND GLOW ===== */
     .background-blob{
-      position:absolute;
-      width:580px; height:580px;
-      border-radius:50%;
+      position:absolute; width:580px; height:580px; border-radius:50%;
       background:radial-gradient(circle, rgba(244,169,197,.38) 0%, rgba(244,169,197,.15) 38%, transparent 72%);
-      filter:blur(18px);
-      opacity:.72;
+      filter:blur(18px); opacity:.72;
       top:-240px; right:-170px;
-      pointer-events:none;
-      z-index:0;
+      pointer-events:none; z-index:0;
       animation:ambientGlow 6s ease-in-out infinite;
     }
     .background-blob.two{
       width:500px; height:500px;
       background:radial-gradient(circle, rgba(169,201,164,.32) 0%, rgba(169,201,164,.13) 38%, transparent 72%);
-      top:auto; right:auto;
-      bottom:-240px; left:-170px;
+      top:auto; right:auto; bottom:-240px; left:-170px;
       animation:ambientGlow 7s ease-in-out infinite reverse;
     }
-    @keyframes ambientGlow{
-      0%,100%{transform:scale(1);opacity:.68;}
-      50%{transform:scale(1.08);opacity:.95;}
-    }
-
-    /* ===== GARLAND (حبل الصور المعلقة) ===== */
-    .garland{
-      position:absolute;
-      top:0; left:0;
-      width:100%;
-      z-index:1;
-      pointer-events:none;
-    }
+    @keyframes ambientGlow{0%,100%{transform:scale(1);opacity:.68;}50%{transform:scale(1.08);opacity:.95;}}
 
     /* ===== FLOATING HEARTS & STARS ===== */
-    .floating-hearts{
-      position:absolute; inset:0;
-      z-index:8;
-      pointer-events:none;
-      overflow:hidden;
-    }
+    .floating-hearts{position:absolute; inset:0; z-index:8; pointer-events:none; overflow:hidden;}
     .floating-hearts span{
-      position:absolute;
-      bottom:-40px;
-      font-size:18px;
-      opacity:0;
+      position:absolute; bottom:-40px; font-size:18px; opacity:0;
       filter:drop-shadow(0 4px 8px rgba(232,138,174,.16));
       animation:heartFloat 7s linear infinite;
     }
@@ -118,200 +85,328 @@
       100%{transform:translateY(-105vh) translateX(-8px) rotate(-6deg) scale(.9);opacity:0;}
     }
 
-    .floating-stars{
-      position:absolute; inset:0;
-      z-index:9;
-      pointer-events:none;
-      overflow:hidden;
-    }
+    .floating-stars{position:absolute; inset:0; z-index:9; pointer-events:none; overflow:hidden;}
     .floating-stars span{
-      position:absolute;
-      color:#fff4a3;
-      font-size:18px;
-      opacity:0;
+      position:absolute; color:#fff4a3; font-size:22px; opacity:0;
       filter:drop-shadow(0 0 5px rgba(255,244,163,.65)) drop-shadow(0 0 12px rgba(255,244,163,.30));
       animation:starTwinkle 4.2s ease-in-out infinite;
     }
-    .floating-stars span:nth-child(1){top:24%;left:10%;font-size:18px;animation-delay:0s;}
-    .floating-stars span:nth-child(2){top:28%;right:14%;font-size:23px;animation-delay:.6s;}
-    .floating-stars span:nth-child(3){top:48%;left:5%;font-size:15px;animation-delay:1.1s;}
-    .floating-stars span:nth-child(4){top:58%;right:7%;font-size:19px;animation-delay:1.7s;}
-    .floating-stars span:nth-child(5){bottom:28%;left:14%;font-size:21px;animation-delay:2.2s;}
-    .floating-stars span:nth-child(6){bottom:23%;right:12%;font-size:16px;animation-delay:.9s;}
+    .floating-stars span:nth-child(1){top:14%;left:10%;font-size:22px;animation-delay:0s;}
+    .floating-stars span:nth-child(2){top:20%;right:14%;font-size:28px;animation-delay:.6s;}
+    .floating-stars span:nth-child(3){top:48%;left:5%;font-size:20px;animation-delay:1.1s;}
+    .floating-stars span:nth-child(4){top:58%;right:7%;font-size:24px;animation-delay:1.7s;}
+    .floating-stars span:nth-child(5){bottom:18%;left:14%;font-size:26px;animation-delay:2.2s;}
+    .floating-stars span:nth-child(6){bottom:13%;right:12%;font-size:22px;animation-delay:.9s;}
     @keyframes starTwinkle{
       0%{opacity:0;transform:scale(.55) rotate(0deg);}
-      20%{opacity:.25;transform:scale(.8) rotate(6deg);}
-      42%{opacity:1;transform:scale(1.25) rotate(15deg);}
-      58%{opacity:.9;transform:scale(1.05) rotate(8deg);}
-      72%{opacity:.35;transform:scale(.8) rotate(-4deg);}
+      20%{opacity:.35;transform:scale(.85) rotate(6deg);}
+      50%{opacity:1;transform:scale(1.25) rotate(15deg);}
+      70%{opacity:.6;transform:scale(1.05) rotate(8deg);}
       100%{opacity:0;transform:scale(.55) rotate(0deg);}
     }
 
     /* ===== TOP BAR ===== */
     .top-bar{
-      position:absolute;
-      top:0; left:0; right:0;
-      z-index:30;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
+      position:absolute; top:0; left:0; right:0; z-index:30;
+      display:flex; justify-content:space-between; align-items:center;
       padding:22px 6vw;
     }
     .brand{
       display:flex; align-items:center; gap:8px;
-      font-family:'Baloo 2',sans-serif;
-      font-size:1.3rem;
-      font-weight:700;
+      font-family:'Baloo 2',sans-serif; font-size:1.3rem; font-weight:700;
     }
     .brand span{color:var(--pink-deep);}
     .back-btn{
       border:1px solid rgba(74,53,64,.12);
-      background:rgba(255,255,255,.68);
-      backdrop-filter:blur(10px);
-      padding:9px 18px;
-      border-radius:999px;
-      color:var(--plum);
-      font-weight:700;
-      cursor:pointer;
+      background:rgba(255,255,255,.68); backdrop-filter:blur(10px);
+      padding:9px 18px; border-radius:999px;
+      color:var(--plum); font-weight:700; cursor:pointer;
       box-shadow:0 8px 20px rgba(74,53,64,.06);
       transition:transform .25s ease, background .25s ease;
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
+      display:inline-flex; align-items:center; gap:6px;
     }
-    .back-btn:hover{background:var(--white);transform:translateY(-2px);}
-    .back-arrow{display:inline-block;transition:transform .25s ease;}
+    .back-btn:hover{background:var(--white); transform:translateY(-2px);}
+    .back-arrow{display:inline-block; transition:transform .25s ease;}
     html[dir="rtl"] .back-arrow{transform:scaleX(-1);}
 
-    /* ===== POLAROID ===== */
-    .polaroid-pos{
-      position:absolute;
-      left:50%;
-      top:11%;
-      transform:translateX(-50%);
-      width:min(410px, 84vw);
-      z-index:6;
+    /* ===== DIARY FRAME ===== */
+    .diary-wrapper{
+      position:absolute; inset:0;
+      display:flex; align-items:center; justify-content:center;
+      padding:88px 5vw 110px;
+      z-index:5;
     }
-    .polaroid{
+    .diary-container{
       position:relative;
-      background:var(--white);
-      padding:14px 14px 16px;
-      border-radius:10px;
-      box-shadow:0 24px 55px rgba(74,53,64,.20);
-      transform:rotate(-2deg);
-      transform-origin:bottom center;
+      display:flex;
+      align-items:center;
+      gap:24px;
+      max-width:1100px;
+      width:100%;
     }
-    /* washi tape على الزوايا */
-    .polaroid::before,
-    .polaroid::after{
+
+    /* الورقة الرئيسية */
+    .diary-page{
+      position:relative;
+      flex:1;
+      aspect-ratio:16/10;
+      max-width:780px;
+      background:var(--paper);
+      border-radius:4px 14px 14px 4px;
+      box-shadow:
+        0 30px 60px rgba(74,53,64,.18),
+        0 10px 20px rgba(74,53,64,.08),
+        inset 0 0 80px rgba(244,169,197,.05);
+      padding:54px 48px 36px;
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+    }
+    html[dir="rtl"] .diary-page{
+      border-radius:14px 4px 4px 14px;
+    }
+
+    /* خط الورقة المسطّر */
+    .diary-page::before{
+      content:'';
+      position:absolute; inset:0;
+      background-image:repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        transparent 31px,
+        rgba(232,138,174,.12) 31px,
+        rgba(232,138,174,.12) 32px
+      );
+      pointer-events:none;
+      border-radius:inherit;
+    }
+    /* خط الهامش الأحمر */
+    .diary-page::after{
       content:'';
       position:absolute;
-      width:74px; height:24px;
-      background:rgba(244,169,197,.5);
+      top:0; bottom:0;
+      left:60px;
+      width:1px;
+      background:rgba(244,127,117,.35);
+      pointer-events:none;
+    }
+    html[dir="rtl"] .diary-page::after{
+      left:auto; right:60px;
+    }
+
+    /* Spiral binding في الأعلى */
+    .spiral{
+      position:absolute;
+      top:-6px; left:0; right:0;
+      display:flex;
+      justify-content:space-evenly;
+      z-index:3;
+      pointer-events:none;
+    }
+    .spiral span{
+      width:18px; height:26px;
+      border:2.5px solid var(--plum-soft);
+      border-radius:50%;
+      background:var(--paper);
+      box-shadow:0 2px 4px rgba(74,53,64,.15);
+    }
+
+    /* Washi tape على الزوايا */
+    .tape{
+      position:absolute;
+      width:78px; height:22px;
+      background:rgba(244,169,197,.55);
       border-left:2px dashed rgba(255,255,255,.85);
       border-right:2px dashed rgba(255,255,255,.85);
       border-radius:3px;
-      top:-12px;
+      z-index:4;
+      box-shadow:0 4px 8px rgba(74,53,64,.1);
     }
-    .polaroid::before{left:-24px;transform:rotate(-38deg);}
-    .polaroid::after{right:-24px;transform:rotate(38deg);}
+    .tape.t1{top:14px; left:-18px; transform:rotate(-28deg); background:rgba(244,169,197,.6);}
+    .tape.t2{top:14px; right:-18px; transform:rotate(28deg); background:rgba(169,201,164,.55);}
+    .tape.t3{bottom:14px; left:-18px; transform:rotate(28deg); background:rgba(255,217,184,.7);}
+    .tape.t4{bottom:14px; right:-18px; transform:rotate(-28deg); background:rgba(244,169,197,.6);}
 
-    .polaroid.eject{
-      animation:polaroidEject .75s cubic-bezier(.34,1.56,.64,1);
-    }
-    @keyframes polaroidEject{
-      0%{transform:translateY(150px) scale(.55) rotate(8deg);opacity:0;}
-      55%{transform:translateY(-16px) scale(1.04) rotate(-4deg);opacity:1;}
-      100%{transform:translateY(0) scale(1) rotate(-2deg);opacity:1;}
-    }
-
-    .polaroid-img-wrap{
+    /* رأس الصفحة (التاريخ + العنوان) */
+    .diary-header{
       position:relative;
-      background:var(--cream-deep);
-      border-radius:6px;
-      overflow:hidden;
+      z-index:2;
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      margin-bottom:18px;
+      padding-bottom:10px;
+      border-bottom:2px dashed rgba(139,117,128,.2);
+    }
+    .diary-date{
+      font-family:'Caveat', cursive;
+      font-size:1.4rem;
+      font-weight:600;
+      color:var(--pink-deep);
+      transform:rotate(-2deg);
+    }
+    .diary-title{
+      font-family:'Caveat', cursive;
+      font-size:1.6rem;
+      font-weight:700;
+      color:var(--plum);
+      transform:rotate(1deg);
+    }
+
+    /* منطقة المحتوى */
+    .diary-content{
+      position:relative;
+      z-index:2;
+      flex:1;
+      display:grid;
+      grid-template-columns:1fr 1.5fr;
+      gap:20px;
+      align-items:center;
+    }
+    html[dir="rtl"] .diary-content{
+      grid-template-columns:1.5fr 1fr;
+    }
+
+    /* تعليق بخط اليد */
+    .diary-note{
+      position:relative;
+      font-family:'Caveat', cursive;
+      font-size:1.25rem;
+      line-height:1.4;
+      color:var(--plum);
+      font-weight:500;
+      min-height:120px;
+    }
+    .diary-note::before{
+      content:'✎';
+      position:absolute;
+      top:-14px;
+      left:-4px;
+      font-size:1.2rem;
+      color:var(--pink-deep);
+    }
+    html[dir="rtl"] .diary-note::before{
+      left:auto; right:-4px;
+      transform:scaleX(-1);
+    }
+    .diary-note .note-emoji{
+      display:inline-block;
+      margin-left:4px;
+      animation:emojiBounce 2.2s ease-in-out infinite;
+    }
+    html[dir="rtl"] .diary-note .note-emoji{
+      margin-left:0; margin-right:4px;
+    }
+    @keyframes emojiBounce{
+      0%,100%{transform:translateY(0) rotate(-5deg);}
+      50%{transform:translateY(-4px) rotate(8deg);}
+    }
+
+    /* إطار الصورة */
+    .diary-image-wrap{
+      position:relative;
+      width:100%;
       aspect-ratio:4/3;
+      background:var(--cream);
+      border-radius:10px;
+      border:3px solid var(--white);
+      box-shadow:
+        0 8px 20px rgba(74,53,64,.15),
+        inset 0 0 0 1px rgba(74,53,64,.04);
+      overflow:hidden;
+      transform:rotate(-1.5deg);
+      transition:transform .4s ease;
+    }
+    .diary-image-wrap:hover{
+      transform:rotate(0deg) scale(1.02);
     }
     .portfolio-image{
-      display:block;
-      width:100%;
-      height:100%;
-      object-fit:cover;
+      position:absolute; inset:0;
+      width:100%; height:100%;
+      object-fit:contain;
       object-position:center;
-      transition:opacity .3s ease;
+      opacity:1;
+      transition:opacity .4s ease;
+    }
+    .portfolio-image.fading{
+      opacity:0;
     }
     .slide-label{
       position:absolute;
-      left:12px; top:12px;
-      padding:7px 14px;
+      left:10px; top:10px;
+      padding:5px 12px;
       border-radius:999px;
       background:rgba(255,255,255,.88);
       border:1px solid rgba(74,53,64,.08);
       backdrop-filter:blur(8px);
       color:var(--plum);
-      font-size:.72rem;
+      font-size:.68rem;
       font-weight:700;
       letter-spacing:.06em;
       text-transform:uppercase;
-      box-shadow:0 8px 18px rgba(74,53,64,.07);
+      box-shadow:0 4px 10px rgba(74,53,64,.07);
+      z-index:2;
     }
-    html[dir="rtl"] .slide-label{left:auto;right:12px;}
+    html[dir="rtl"] .slide-label{left:auto; right:10px;}
 
-    .polaroid-caption{
+    /* تذييل الصفحة (رقم الصفحة) */
+    .diary-footer{
+      position:relative;
+      z-index:2;
+      display:flex;
+      justify-content:center;
+      margin-top:12px;
       font-family:'Caveat', cursive;
-      font-size:1.5rem;
-      font-weight:600;
-      text-align:center;
-      padding-top:10px;
+      font-size:1.1rem;
       color:var(--plum-soft);
-      min-height:2.2rem;
+      font-weight:600;
     }
 
-    /* ===== CAPYBARA PHOTOGRAPHER ===== */
-    .capy-photographer{
-      position:absolute;
-      left:50%;
-      bottom:88px;
-      transform:translateX(-50%);
-      width:min(300px, 62vw);
-      z-index:5;
+    /* doodles حول المفكرة */
+    .doodles{
+      position:absolute; inset:0;
       pointer-events:none;
+      z-index:1;
+    }
+    .doodle{
+      position:absolute;
+      opacity:.85;
+      filter:drop-shadow(0 2px 4px rgba(74,53,64,.1));
+    }
+    .doodle.d1{top:-18px; right:8%; transform:rotate(18deg); animation:doodleFloat 4s ease-in-out infinite;}
+    .doodle.d2{top:18%; left:-20px; transform:rotate(-15deg); animation:doodleFloat 5s ease-in-out infinite .5s;}
+    .doodle.d3{bottom:8%; right:-10px; transform:rotate(12deg); animation:doodleFloat 4.5s ease-in-out infinite 1s;}
+    .doodle.d4{bottom:-10px; left:12%; transform:rotate(-8deg); animation:doodleFloat 5.5s ease-in-out infinite 1.5s;}
+    @keyframes doodleFloat{
+      0%,100%{transform:translateY(0) rotate(var(--r,0deg));}
+      50%{transform:translateY(-6px) rotate(var(--r,0deg));}
+    }
+    .d1{--r:18deg;} .d2{--r:-15deg;} .d3{--r:12deg;} .d4{--r:-8deg;}
+
+    /* ===== CAPYBARA READER ===== */
+    .capy-reader{
+      flex-shrink:0;
+      width:160px;
+      height:200px;
       animation:capyBob 4s ease-in-out infinite;
+      filter:drop-shadow(0 12px 18px rgba(74,53,64,.15));
     }
     @keyframes capyBob{
-      0%,100%{transform:translateX(-50%) translateY(0);}
-      50%{transform:translateX(-50%) translateY(-6px);}
+      0%,100%{transform:translateY(0);}
+      50%{transform:translateY(-8px);}
     }
-    .capy-photographer svg{
+    .capy-reader svg{
+      width:100%; height:100%;
       display:block;
-      width:100%;
-      height:auto;
-      filter:drop-shadow(0 10px 16px rgba(74,53,64,.12));
     }
-    .capy-photographer .flash{
-      opacity:0;
+    .capy-reader .book{
       transform-box:fill-box;
       transform-origin:center;
+      animation:bookWiggle 3s ease-in-out infinite;
     }
-    .capy-photographer .camera{
-      transform-box:fill-box;
-      transform-origin:center;
-    }
-    .capy-photographer.shooting .flash{
-      animation:flashBurst .55s ease;
-    }
-    .capy-photographer.shooting .camera{
-      animation:camShake .45s ease;
-    }
-    @keyframes flashBurst{
-      0%{opacity:0;transform:scale(.5);}
-      40%{opacity:1;transform:scale(1.2);}
-      100%{opacity:0;transform:scale(1);}
-    }
-    @keyframes camShake{
-      0%,100%{transform:translateY(0) rotate(0);}
-      30%{transform:translateY(3px) rotate(-2deg);}
-      60%{transform:translateY(-2px) rotate(2deg);}
+    @keyframes bookWiggle{
+      0%,100%{transform:rotate(-2deg);}
+      50%{transform:rotate(2deg);}
     }
 
     /* ===== CONTROLS ===== */
@@ -325,85 +420,88 @@
       align-items:center;
       gap:18px;
     }
-    .arrow-group{display:flex;gap:10px;}
+    .arrow-group{display:flex; gap:10px;}
     .arrow{
       width:44px; height:44px;
-      border:none;
-      border-radius:50%;
+      border:none; border-radius:50%;
       background:rgba(255,255,255,.82);
       color:var(--plum);
-      display:flex;
-      align-items:center;
-      justify-content:center;
+      display:flex; align-items:center; justify-content:center;
       font-size:1.15rem;
       cursor:pointer;
       box-shadow:0 8px 20px rgba(74,53,64,.08);
       transition:transform .2s ease, background .2s ease;
     }
-    .arrow:hover{background:var(--white);transform:translateY(-2px);}
-    .dots{display:flex;gap:7px;justify-content:center;align-items:center;}
+    .arrow:hover{background:var(--white); transform:translateY(-2px);}
+    html[dir="rtl"] .arrow{transform:scaleX(-1);}
+    html[dir="rtl"] .arrow:hover{transform:scaleX(-1) translateY(-2px);}
+    .dots{display:flex; gap:7px; justify-content:center; align-items:center;}
     .dot{
-      width:7px; height:7px;
-      border-radius:50%;
-      border:none;
-      background:rgba(74,53,64,.2);
-      padding:0;
-      cursor:pointer;
+      width:7px; height:7px; border-radius:50%;
+      border:none; background:rgba(74,53,64,.2);
+      padding:0; cursor:pointer;
       transition:width .3s ease, background .3s ease;
     }
-    .dot.active{width:24px;border-radius:999px;background:var(--pink-deep);}
+    .dot.active{width:24px; border-radius:999px; background:var(--pink-deep);}
     .counter{
       justify-self:end;
-      padding:8px 13px;
-      border-radius:999px;
+      padding:8px 13px; border-radius:999px;
       background:rgba(255,255,255,.7);
       color:var(--plum-soft);
-      font-size:.78rem;
-      font-weight:700;
+      font-size:.78rem; font-weight:700;
       border:1px solid rgba(74,53,64,.08);
     }
 
-    /* ===== RESPONSIVE ===== */
-    @media(max-width:800px){
-      .top-bar{padding:18px 5vw;}
-      .brand{font-size:1.1rem;}
-      .back-btn{padding:8px 14px;font-size:.85rem;}
-      .polaroid-pos{top:9%;width:min(360px,86vw);}
-      .capy-photographer{width:min(240px,60vw);bottom:92px;}
-      .controls{left:5vw;right:5vw;bottom:16px;}
-      .arrow{width:40px;height:40px;}
-    }
-    @media(max-width:520px){
-      .polaroid-pos{top:8%;}
-      .polaroid-caption{font-size:1.25rem;}
-      .counter{display:none;}
-      .controls{grid-template-columns:1fr 1fr;}
-      .dots{grid-column:1 / -1;grid-row:1;}
-      .arrow-group{grid-column:1 / -1;grid-row:2;justify-content:space-between;}
-      .capy-photographer{width:220px;bottom:96px;}
-    }
-
-    /* ===== MORPH TRANSITION ===== */
+    /* ===== PAGE TRANSITION ===== */
     .page-transition{
-      position:fixed; inset:0;
-      z-index:9999;
+      position:fixed; inset:0; z-index:9999;
       background:var(--cream);
-      display:flex;
-      justify-content:center;
-      align-items:center;
+      display:flex; justify-content:center; align-items:center;
       pointer-events:none;
-      opacity:0;
-      transform:scale(1.08);
+      opacity:0; transform:scale(1.08);
       border-radius:45%;
       transition:opacity .45s ease, transform .65s cubic-bezier(.7,0,.2,1), border-radius .65s ease;
       backdrop-filter:blur(0);
     }
     .page-transition.active{
-      opacity:1;
-      transform:scale(1);
-      border-radius:0;
-      pointer-events:auto;
-      backdrop-filter:blur(10px);
+      opacity:1; transform:scale(1); border-radius:0;
+      pointer-events:auto; backdrop-filter:blur(10px);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media(max-width:900px){
+      .diary-container{flex-direction:column; gap:16px;}
+      .capy-reader{width:100px; height:130px; order:-1;}
+      .diary-page{aspect-ratio:auto; min-height:440px;}
+      .diary-content{grid-template-columns:1fr; gap:14px;}
+      html[dir="rtl"] .diary-content{grid-template-columns:1fr;}
+      .diary-note{min-height:auto;}
+    }
+    @media(max-width:800px){
+      .top-bar{padding:18px 5vw;}
+      .brand{font-size:1.1rem;}
+      .back-btn{padding:8px 14px; font-size:.85rem;}
+      .diary-wrapper{padding:78px 4vw 100px;}
+      .diary-page{padding:42px 28px 28px;}
+      .diary-date{font-size:1.15rem;}
+      .diary-title{font-size:1.3rem;}
+      .diary-note{font-size:1.05rem;}
+      .controls{left:5vw; right:5vw; bottom:16px;}
+      .arrow{width:40px; height:40px;}
+    }
+    @media(max-width:520px){
+      .diary-page{padding:38px 18px 22px;}
+      .diary-page::after{left:36px;}
+      html[dir="rtl"] .diary-page::after{left:auto; right:36px;}
+      .tape{width:60px; height:18px;}
+      .tape.t1, .tape.t2{top:8px;}
+      .tape.t3, .tape.t4{bottom:8px;}
+      .counter{display:none;}
+      .controls{grid-template-columns:1fr 1fr;}
+      .dots{grid-column:1 / -1; grid-row:1;}
+      .arrow-group{grid-column:1 / -1; grid-row:2; justify-content:space-between;}
+      .doodles{display:none;}
+      .capy-reader{width:80px; height:110px;}
     }
 
     @media(prefers-reduced-motion:reduce){
@@ -412,7 +510,6 @@
         animation-iteration-count:1 !important;
         transition-duration:.01ms !important;
       }
-      .arrow,.back-btn,.portfolio-image{transition:none;}
     }
   </style>
 </head>
@@ -422,58 +519,19 @@
   <div class="page-transition active" id="pageTransition"></div>
 
   <main class="portfolio-page">
-
     <div class="background-blob"></div>
     <div class="background-blob two"></div>
-
-    <!-- ===== حبل الصور المعلقة ===== -->
-    <svg class="garland" viewBox="0 0 1200 170" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <path d="M0 26 Q300 108 600 38" stroke="#D9B8A6" stroke-width="3" fill="none"/>
-      <path d="M600 38 Q900 112 1200 28" stroke="#D9B8A6" stroke-width="3" fill="none"/>
-      <!-- صور صغيرة معلقة -->
-      <g transform="rotate(-4 150 92)">
-        <line x1="150" y1="62" x2="150" y2="80" stroke="#B9855A" stroke-width="2"/>
-        <rect x="126" y="80" width="48" height="56" rx="4" fill="#fff"/>
-        <rect x="131" y="85" width="38" height="38" rx="3" fill="#FCE0EB"/>
-      </g>
-      <g transform="rotate(3 300 106)">
-        <line x1="300" y1="78" x2="300" y2="96" stroke="#B9855A" stroke-width="2"/>
-        <rect x="276" y="96" width="48" height="56" rx="4" fill="#fff"/>
-        <rect x="281" y="101" width="38" height="38" rx="3" fill="#E4EFDF"/>
-      </g>
-      <g transform="rotate(-3 450 88)">
-        <line x1="450" y1="60" x2="450" y2="78" stroke="#B9855A" stroke-width="2"/>
-        <rect x="426" y="78" width="48" height="56" rx="4" fill="#fff"/>
-        <rect x="431" y="83" width="38" height="38" rx="3" fill="#FFE9D6"/>
-      </g>
-      <g transform="rotate(4 750 92)">
-        <line x1="750" y1="64" x2="750" y2="82" stroke="#B9855A" stroke-width="2"/>
-        <rect x="726" y="82" width="48" height="56" rx="4" fill="#fff"/>
-        <rect x="731" y="87" width="38" height="38" rx="3" fill="#E4EFF9"/>
-      </g>
-      <g transform="rotate(-3 900 104)">
-        <line x1="900" y1="76" x2="900" y2="94" stroke="#B9855A" stroke-width="2"/>
-        <rect x="876" y="94" width="48" height="56" rx="4" fill="#fff"/>
-        <rect x="881" y="99" width="38" height="38" rx="3" fill="#FCE0EB"/>
-      </g>
-      <g transform="rotate(4 1050 78)">
-        <line x1="1050" y1="50" x2="1050" y2="68" stroke="#B9855A" stroke-width="2"/>
-        <rect x="1026" y="68" width="48" height="56" rx="4" fill="#fff"/>
-        <rect x="1031" y="73" width="38" height="38" rx="3" fill="#E4EFDF"/>
-      </g>
-    </svg>
 
     <div class="floating-hearts" aria-hidden="true">
       <span>🩷</span><span>💗</span><span>💕</span>
       <span>🩷</span><span>💗</span><span>♡</span>
     </div>
-
     <div class="floating-stars" aria-hidden="true">
       <span>✦</span><span>✧</span><span>✦</span>
       <span>✧</span><span>✦</span><span>✧</span>
     </div>
 
-    <!-- ===== TOP BAR ===== -->
+    <!-- TOP BAR -->
     <header class="top-bar">
       <div class="brand">Capibara <span>Designs</span></div>
       <button class="back-btn" type="button" id="backBtn" aria-label="Retour au site principal">
@@ -482,67 +540,129 @@
       </button>
     </header>
 
-    <!-- ===== POLAROID ===== -->
-    <div class="polaroid-pos">
-      <figure class="polaroid" id="polaroid">
-        <div class="polaroid-img-wrap">
-          <img class="portfolio-image" id="portfolioImage" src="portfolio/1.png" alt="Mon travail créatif — Capibara Designs">
-          <div class="slide-label" id="slideLabel">Mon travail créatif</div>
+    <!-- DIARY -->
+    <div class="diary-wrapper">
+      <div class="diary-container">
+
+        <!-- Doodles -->
+        <div class="doodles" aria-hidden="true">
+          <!-- قلم رصاص -->
+          <svg class="doodle d1" width="70" height="18" viewBox="0 0 70 18" fill="none">
+            <rect x="10" y="4" width="50" height="10" rx="2" fill="#F4A9C5" stroke="#6E2E38" stroke-width="2"/>
+            <polygon points="10,4 0,9 10,14" fill="#FFD9B8" stroke="#6E2E38" stroke-width="2"/>
+            <rect x="55" y="4" width="12" height="10" fill="#FCE0EB" stroke="#6E2E38" stroke-width="2"/>
+            <circle cx="3" cy="9" r="1.5" fill="#632332"/>
+          </svg>
+          <!-- قلب -->
+          <svg class="doodle d2" width="42" height="40" viewBox="0 0 42 40" fill="none">
+            <path d="M21 34 C 8 22, 2 14, 6 7 C 10 0, 18 2, 21 10 C 24 2, 32 0, 36 7 C 40 14, 34 22, 21 34 Z" fill="#FCE0EB" stroke="#E88AAE" stroke-width="2.5"/>
+          </svg>
+          <!-- نجمة -->
+          <svg class="doodle d3" width="44" height="44" viewBox="0 0 44 44" fill="none">
+            <path d="M22 4 L27 17 L41 17 L30 26 L34 40 L22 32 L10 40 L14 26 L3 17 L17 17 Z" fill="#FFE9D6" stroke="#D9B8A6" stroke-width="2"/>
+          </svg>
+          <!-- زهرة -->
+          <svg class="doodle d4" width="42" height="42" viewBox="0 0 42 42" fill="none">
+            <circle cx="21" cy="10" r="8" fill="#E4EFDF" stroke="#A9C9A4" stroke-width="2"/>
+            <circle cx="10" cy="21" r="8" fill="#E4EFDF" stroke="#A9C9A4" stroke-width="2"/>
+            <circle cx="32" cy="21" r="8" fill="#E4EFDF" stroke="#A9C9A4" stroke-width="2"/>
+            <circle cx="21" cy="32" r="8" fill="#E4EFDF" stroke="#A9C9A4" stroke-width="2"/>
+            <circle cx="21" cy="21" r="6" fill="#FFD9B8" stroke="#D9B8A6" stroke-width="2"/>
+          </svg>
         </div>
-        <figcaption class="polaroid-caption" id="polaroidCaption">Mon travail créatif ♡</figcaption>
-      </figure>
+
+        <!-- Capybara Reader -->
+        <div class="capy-reader" aria-hidden="true">
+          <svg viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- ظل -->
+            <ellipse cx="100" cy="228" rx="60" ry="7" fill="rgba(74,53,64,.15)"/>
+            <!-- الجسم (جالسة القرفصاء) -->
+            <ellipse cx="100" cy="180" rx="58" ry="50" fill="#E99A78" stroke="#6E2E38" stroke-width="5"/>
+            <ellipse cx="100" cy="195" rx="40" ry="30" fill="#F0B294"/>
+            <!-- الأذنين -->
+            <circle cx="60" cy="80" r="16" fill="#C77F68" stroke="#6E2E38" stroke-width="4"/>
+            <circle cx="140" cy="80" r="16" fill="#C77F68" stroke="#6E2E38" stroke-width="4"/>
+            <circle cx="60" cy="80" r="7" fill="#E8A28E"/>
+            <circle cx="140" cy="80" r="7" fill="#E8A28E"/>
+            <!-- الرأس -->
+            <ellipse cx="100" cy="110" rx="55" ry="48" fill="#ED9D7C" stroke="#6E2E38" stroke-width="5"/>
+            <!-- عيون كتقرا (منخفضة) -->
+            <path d="M78 110 q6 -7 12 0" stroke="#632332" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+            <path d="M110 110 q6 -7 12 0" stroke="#632332" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+            <!-- الخدود -->
+            <ellipse cx="68" cy="130" rx="10" ry="6" fill="#F47F75" opacity=".7"/>
+            <ellipse cx="132" cy="130" rx="10" ry="6" fill="#F47F75" opacity=".7"/>
+            <!-- الأنف والفم -->
+            <ellipse cx="100" cy="130" rx="16" ry="11" fill="#C87561"/>
+            <ellipse cx="95" cy="127" rx="2.5" ry="2" fill="#632332"/>
+            <ellipse cx="105" cy="127" rx="2.5" ry="2" fill="#632332"/>
+            <path d="M100 134 Q100 140 95 143" stroke="#632332" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <path d="M100 134 Q100 140 105 143" stroke="#632332" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <!-- اليدين ماسكين الكتاب -->
+            <ellipse cx="60" cy="185" rx="14" ry="10" fill="#C87561" transform="rotate(-20 60 185)"/>
+            <ellipse cx="140" cy="185" rx="14" ry="10" fill="#C87561" transform="rotate(20 140 185)"/>
+            <!-- الكتاب -->
+            <g class="book">
+              <rect x="50" y="165" width="50" height="40" rx="3" fill="#FFF6EF" stroke="#6E2E38" stroke-width="4"/>
+              <rect x="100" y="165" width="50" height="40" rx="3" fill="#FFF6EF" stroke="#6E2E38" stroke-width="4"/>
+              <line x1="100" y1="165" x2="100" y2="205" stroke="#6E2E38" stroke-width="3"/>
+              <!-- سطور النص في الكتاب -->
+              <line x1="58" y1="175" x2="85" y2="175" stroke="#F4A9C5" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="58" y1="182" x2="90" y2="182" stroke="#F4A9C5" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="58" y1="189" x2="80" y2="189" stroke="#F4A9C5" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="58" y1="196" x2="85" y2="196" stroke="#F4A9C5" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="110" y1="175" x2="140" y2="175" stroke="#A9C9A4" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="110" y1="182" x2="135" y2="182" stroke="#A9C9A4" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="110" y1="189" x2="142" y2="189" stroke="#A9C9A4" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="110" y1="196" x2="135" y2="196" stroke="#A9C9A4" stroke-width="1.5" stroke-linecap="round"/>
+            </g>
+          </svg>
+        </div>
+
+        <!-- Diary Page -->
+        <div class="diary-page" id="diaryPage">
+          <!-- Spiral -->
+          <div class="spiral" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+          </div>
+
+          <!-- Washi tapes -->
+          <div class="tape t1" aria-hidden="true"></div>
+          <div class="tape t2" aria-hidden="true"></div>
+          <div class="tape t3" aria-hidden="true"></div>
+          <div class="tape t4" aria-hidden="true"></div>
+
+          <!-- Header -->
+          <div class="diary-header">
+            <div class="diary-date" data-i18n="diaryDate">Juillet 2026 🌸</div>
+            <div class="diary-title" data-i18n="diaryTitle">Mon Journal Créatif</div>
+          </div>
+
+          <!-- Content -->
+          <div class="diary-content">
+            <div class="diary-note">
+              <span id="diaryNote" data-i18n="note1">Mon premier projet de l'année ! J'adore vraiment ce design, il a été créé avec beaucoup d'amour</span>
+              <span class="note-emoji" id="noteEmoji">🩷</span>
+            </div>
+
+            <div class="diary-image-wrap">
+              <img class="portfolio-image" id="portfolioImage" src="portfolio/1.png" alt="Mon travail créatif — Capibara Designs">
+              <div class="slide-label" id="slideLabel">Mon travail créatif</div>
+            </div>
+          </div>
+
+          <!-- Footer -->
+          <div class="diary-footer">
+            <span>— page <span id="pageNum">01</span> sur 05 —</span>
+          </div>
+        </div>
+
+      </div>
     </div>
 
-    <!-- ===== CAPYBARA PHOTOGRAPHER ===== -->
-    <div class="capy-photographer" id="capyPhotographer" aria-hidden="true">
-      <svg viewBox="0 0 360 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- ظل -->
-        <ellipse cx="180" cy="304" rx="112" ry="13" fill="#E4EFDF"/>
-        <!-- الأذنين -->
-        <circle cx="110" cy="70" r="24" fill="#C77F68" stroke="#6E2E38" stroke-width="6"/>
-        <circle cx="250" cy="70" r="24" fill="#C77F68" stroke="#6E2E38" stroke-width="6"/>
-        <circle cx="110" cy="70" r="11" fill="#E8A28E"/>
-        <circle cx="250" cy="70" r="11" fill="#E8A28E"/>
-        <!-- الجسم -->
-        <ellipse cx="180" cy="225" rx="100" ry="85" fill="#E99A78" stroke="#6E2E38" stroke-width="7"/>
-        <ellipse cx="180" cy="248" rx="68" ry="55" fill="#F0B294"/>
-        <!-- الرأس -->
-        <ellipse cx="180" cy="120" rx="82" ry="72" fill="#ED9D7C" stroke="#6E2E38" stroke-width="7"/>
-        <!-- عيون سعيدة -->
-        <path d="M138 112 q9 -11 18 0" stroke="#632332" stroke-width="5" fill="none" stroke-linecap="round"/>
-        <path d="M204 112 q9 -11 18 0" stroke="#632332" stroke-width="5" fill="none" stroke-linecap="round"/>
-        <!-- الخدود -->
-        <ellipse cx="118" cy="140" rx="15" ry="9" fill="#F47F75" opacity=".7"/>
-        <ellipse cx="242" cy="140" rx="15" ry="9" fill="#F47F75" opacity=".7"/>
-        <!-- الأنف والفم -->
-        <ellipse cx="180" cy="140" rx="24" ry="17" fill="#C87561"/>
-        <ellipse cx="171" cy="136" rx="4" ry="3.5" fill="#632332"/>
-        <ellipse cx="189" cy="136" rx="4" ry="3.5" fill="#632332"/>
-        <path d="M180 144 Q180 153 171 158" stroke="#632332" stroke-width="4" fill="none" stroke-linecap="round"/>
-        <path d="M180 144 Q180 153 189 158" stroke="#632332" stroke-width="4" fill="none" stroke-linecap="round"/>
-        <!-- فلاش التصوير -->
-        <g class="flash">
-          <path d="M180 186 L180 170" stroke="#FFD9B8" stroke-width="6" stroke-linecap="round"/>
-          <path d="M156 192 L144 180" stroke="#FFD9B8" stroke-width="6" stroke-linecap="round"/>
-          <path d="M204 192 L216 180" stroke="#FFD9B8" stroke-width="6" stroke-linecap="round"/>
-        </g>
-        <!-- الكاميرا -->
-        <g class="camera">
-          <rect x="128" y="200" width="104" height="72" rx="14" fill="#F4A9C5" stroke="#6E2E38" stroke-width="6"/>
-          <rect x="128" y="200" width="104" height="20" rx="10" fill="#FCE0EB" stroke="#6E2E38" stroke-width="5"/>
-          <circle cx="180" cy="242" r="20" fill="#FFF6EF" stroke="#6E2E38" stroke-width="6"/>
-          <circle cx="180" cy="242" r="10" fill="#A9C6E8" stroke="#6E2E38" stroke-width="4"/>
-          <circle cx="176" cy="238" r="3" fill="#fff"/>
-          <rect x="208" y="206" width="14" height="9" rx="3" fill="#FFD9B8" stroke="#6E2E38" stroke-width="3"/>
-          <circle cx="146" cy="211" r="5" fill="#E88AAE" stroke="#6E2E38" stroke-width="3"/>
-        </g>
-        <!-- اليدين فوق الكاميرا -->
-        <ellipse cx="126" cy="222" rx="24" ry="16" fill="#C87561" transform="rotate(-24 126 222)"/>
-        <ellipse cx="234" cy="222" rx="24" ry="16" fill="#C87561" transform="rotate(24 234 222)"/>
-      </svg>
-    </div>
-
-    <!-- ===== NAVIGATION ===== -->
+    <!-- CONTROLS -->
     <div class="controls">
       <div class="arrow-group">
         <button class="arrow" id="prevBtn" type="button" aria-label="Slide précédente">←</button>
@@ -551,88 +671,122 @@
       <div class="dots" id="dots" aria-label="Navigation des slides"></div>
       <div class="counter" id="counter" aria-live="polite">01 / 05</div>
     </div>
-
   </main>
 
   <script>
-    /* ===== TRADUCTIONS i18n ===== */
+    /* ============================================================
+       TRADUCTIONS i18n — FR / EN / AR
+       ============================================================ */
     const translations = {
       fr: {
         back:'Retour', backAria:'Retour au site principal',
-        label1:'Mon travail créatif', label2:'Moodboard', label3:'Logos',
-        label4:'Présentations PowerPoint', label5:'Cartes de visite',
+        diaryDate:'Juillet 2026 🌸', diaryTitle:'Mon Journal Créatif',
+        label1:'Mon travail créatif',
+        label2:'Moodboard',
+        label3:'Logos',
+        label4:'Présentations PowerPoint',
+        label5:'Cartes de visite',
+        note1:'Mon premier projet de l\'année ! J\'adore vraiment ce design, il a été créé avec beaucoup d\'amour',
+        note2:'Ma planche d\'inspiration. Les couleurs douces sont vraiment mon univers préféré',
+        note3:'Le logo final ! Je l\'ai dessiné à la main avant de le vectoriser, c\'est ma méthode favorite',
+        note4:'Des slides qui racontent une histoire. J\'aime quand une présentation émeut son public',
+        note5:'Mes petites cartes de visite. Elles tiennent dans une poche mais portent tout un univers',
+        emoji1:'🩷', emoji2:'🌸', emoji3:'✨', emoji4:'📖', emoji5:'💌',
+        pageLabel:'page', ofLabel:'sur',
         prevAria:'Slide précédente', nextAria:'Slide suivante',
         dotsAria:'Navigation des slides',
-        dotAria:(i)=>`Aller à la slide ${i}`,
+        dotAria:(i)=>`Aller à la page ${i}`,
         title:'Portfolio — Capibara Designs', direction:'ltr'
       },
       en: {
         back:'Back', backAria:'Return to main site',
-        label1:'My Creative Work', label2:'Moodboard', label3:'Logos',
-        label4:'PowerPoint Presentations', label5:'Business Cards',
+        diaryDate:'July 2026 🌸', diaryTitle:'My Creative Diary',
+        label1:'My Creative Work',
+        label2:'Moodboard',
+        label3:'Logos',
+        label4:'PowerPoint Presentations',
+        label5:'Business Cards',
+        note1:'My first project of the year! I really love this design, it was made with a lot of love',
+        note2:'My inspiration board. Soft colors are truly my favorite universe',
+        note3:'The final logo! I drew it by hand before vectorizing it, it\'s my favorite method',
+        note4:'Slides that tell a story. I love when a presentation moves its audience',
+        note5:'My little business cards. They fit in a pocket but carry a whole universe',
+        emoji1:'🩷', emoji2:'🌸', emoji3:'✨', emoji4:'📖', emoji5:'💌',
+        pageLabel:'page', ofLabel:'of',
         prevAria:'Previous slide', nextAria:'Next slide',
         dotsAria:'Slide navigation',
-        dotAria:(i)=>`Go to slide ${i}`,
+        dotAria:(i)=>`Go to page ${i}`,
         title:'Portfolio — Capibara Designs', direction:'ltr'
       },
       ar: {
         back:'رجوع', backAria:'العودة إلى الموقع الرئيسي',
-        label1:'أعمالي الإبداعية', label2:'لوحة الإلهام', label3:'الشعارات',
-        label4:'عروض PowerPoint', label5:'بطاقات العمل',
+        diaryDate:'يوليو 2026 🌸', diaryTitle:'مذكرتي الإبداعية',
+        label1:'أعمالي الإبداعية',
+        label2:'لوحة الإلهام',
+        label3:'الشعارات',
+        label4:'عروض PowerPoint',
+        label5:'بطاقات العمل',
+        note1:'أول مشروع لي هذا العام! أحب هذا التصميم كثيراً، صُنع بحب كبير',
+        note2:'لوحة إلهامي. الألوان الناعمة هي عالمي المفضل حقاً',
+        note3:'الشعار النهائي! رسمته بيدي قبل تحويله لمتجه، إنها طريقتي المفضلة',
+        note4:'شرائح تحكي قصة. أحب عندما يثير العرض مشاعر الجمهور',
+        note5:'بطاقات عملي الصغيرة. تتسع في الجيب لكنها تحمل عالماً كاملاً',
+        emoji1:'🩷', emoji2:'🌸', emoji3:'✨', emoji4:'📖', emoji5:'💌',
+        pageLabel:'صفحة', ofLabel:'من',
         prevAria:'الشريحة السابقة', nextAria:'الشريحة التالية',
         dotsAria:'التنقل بين الشرائح',
-        dotAria:(i)=>`انتقل إلى الشريحة ${i}`,
+        dotAria:(i)=>`انتقل إلى الصفحة ${i}`,
         title:'الأعمال — كابيبارا ديزاينز', direction:'rtl'
       }
     };
 
     let currentLang = localStorage.getItem('capibara-lang') || 'fr';
 
-    /* ===== الأعمال ===== */
+    /* ============================================================
+       WORKS DATA — الأعمال الخمسة
+       ============================================================ */
     const works = [
-      { src:'portfolio/1.png', key:'label1' },
-      { src:'portfolio/2.png', key:'label2' },
-      { src:'portfolio/3.png', key:'label3' },
-      { src:'portfolio/4.png', key:'label4' },
-      { src:'portfolio/5.png', key:'label5' }
+      { src:'portfolio/1.png', labelKey:'label1', noteKey:'note1', emojiKey:'emoji1' },
+      { src:'portfolio/2.png', labelKey:'label2', noteKey:'note2', emojiKey:'emoji2' },
+      { src:'portfolio/3.png', labelKey:'label3', noteKey:'note3', emojiKey:'emoji3' },
+      { src:'portfolio/4.png', labelKey:'label4', noteKey:'note4', emojiKey:'emoji4' },
+      { src:'portfolio/5.png', labelKey:'label5', noteKey:'note5', emojiKey:'emoji5' }
     ];
-
     const slidesCount = works.length;
-    const polaroid = document.getElementById('polaroid');
+
+    /* ============================================================
+       ELEMENTS
+       ============================================================ */
     const portfolioImage = document.getElementById('portfolioImage');
     const slideLabel = document.getElementById('slideLabel');
-    const polaroidCaption = document.getElementById('polaroidCaption');
-    const capyPhotographer = document.getElementById('capyPhotographer');
+    const diaryNote = document.getElementById('diaryNote');
+    const noteEmoji = document.getElementById('noteEmoji');
+    const pageNum = document.getElementById('pageNum');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
     const dotsContainer = document.getElementById('dots');
     const counter = document.getElementById('counter');
+    const pageTransition = document.getElementById('pageTransition');
 
     let currentSlide = 0;
 
-    /* ===== CREATE DOTS ===== */
+    /* ============================================================
+       CREATE DOTS
+       ============================================================ */
     works.forEach((work, index) => {
       const dot = document.createElement('button');
       dot.className = 'dot';
       dot.type = 'button';
       dot.setAttribute('aria-label', translations[currentLang].dotAria(index + 1));
-      if(index === 0) dot.classList.add('active');
+      if (index === 0) dot.classList.add('active');
       dot.addEventListener('click', () => showSlide(index));
       dotsContainer.appendChild(dot);
     });
     const dots = document.querySelectorAll('.dot');
 
-    /* ===== تحديث النصوص ===== */
-    function updateTexts(){
-      const t = translations[currentLang];
-      const work = works[currentSlide];
-      const text = t[work.key];
-      slideLabel.textContent = text;
-      polaroidCaption.textContent = text + ' ♡';
-      portfolioImage.alt = text + ' — Capibara Designs';
-    }
-
-    /* ===== APPLY LANGUAGE ===== */
+    /* ============================================================
+       APPLY LANGUAGE
+       ============================================================ */
     function applyLanguage(lang){
       currentLang = lang;
       localStorage.setItem('capibara-lang', lang);
@@ -644,7 +798,7 @@
 
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.dataset.i18n;
-        if(t[key]) el.textContent = t[key];
+        if (t[key]) el.textContent = t[key];
       });
 
       document.getElementById('backBtn').setAttribute('aria-label', t.backAria);
@@ -656,87 +810,105 @@
       updateTexts();
     }
 
-    /* ===== SHOW SLIDE ===== */
+    /* ============================================================
+       UPDATE TEXTS
+       ============================================================ */
+    function updateTexts(){
+      const t = translations[currentLang];
+      const work = works[currentSlide];
+      slideLabel.textContent = t[work.labelKey];
+      diaryNote.textContent = t[work.noteKey];
+      noteEmoji.textContent = t[work.emojiKey];
+      pageNum.textContent = String(currentSlide + 1).padStart(2, '0');
+      portfolioImage.alt = t[work.labelKey] + ' — Capibara Designs';
+    }
+
+    /* ============================================================
+       SHOW SLIDE — FADE TRANSITION
+       ============================================================ */
     function showSlide(index){
-      if(index < 0) index = slidesCount - 1;
-      if(index >= slidesCount) index = 0;
+      if (index < 0) index = slidesCount - 1;
+      if (index >= slidesCount) index = 0;
+      if (index === currentSlide) return;
 
       currentSlide = index;
 
-      /* الكاميرا كتصوّر 🔊 */
-      capyPhotographer.classList.remove('shooting');
-      void capyPhotographer.offsetWidth;
-      capyPhotographer.classList.add('shooting');
+      /* Fade out */
+      portfolioImage.classList.add('fading');
 
-      /* الـ Polaroid كيطلع من الكاميرا */
-      polaroid.classList.remove('eject');
-      void polaroid.offsetWidth;
-      polaroid.classList.add('eject');
+      setTimeout(() => {
+        /* Preload image */
+        const pre = new Image();
+        pre.src = works[index].src;
+        pre.onload = () => {
+          portfolioImage.src = works[index].src;
+          portfolioImage.classList.remove('fading');
+        };
+        /* في حالة الصورة محملة مسبقاً */
+        if (pre.complete) {
+          portfolioImage.src = works[index].src;
+          portfolioImage.classList.remove('fading');
+        }
+      }, 350);
 
-      /* تبديل الصورة */
-      portfolioImage.style.opacity = 0;
-      const pre = new Image();
-      pre.src = works[index].src;
-      pre.onload = () => {
-        portfolioImage.src = works[index].src;
-        portfolioImage.style.opacity = 1;
-      };
-
+      /* Update texts immediately for smooth feel */
       updateTexts();
 
+      /* Update dots */
       dots.forEach(d => d.classList.remove('active'));
       dots[index].classList.add('active');
 
+      /* Update counter */
       counter.textContent =
         String(index + 1).padStart(2,'0') + ' / ' + String(slidesCount).padStart(2,'0');
     }
 
-    /* ===== BUTTONS ===== */
+    /* ============================================================
+       BUTTONS
+       ============================================================ */
     nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
     prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
-    document.getElementById('backBtn').addEventListener('click', goBack);
 
-    /* ===== KEYBOARD ===== */
+    /* ============================================================
+       KEYBOARD
+       ============================================================ */
     document.addEventListener('keydown', (e) => {
-      if(e.key === 'ArrowRight') showSlide(currentSlide + 1);
-      if(e.key === 'ArrowLeft') showSlide(currentSlide - 1);
-      if(e.key === 'Escape') goBack();
+      if (e.key === 'ArrowRight') showSlide(currentSlide + 1);
+      if (e.key === 'ArrowLeft') showSlide(currentSlide - 1);
+      if (e.key === 'Escape') goBack();
     });
 
-    /* ===== TOUCH / SWIPE ===== */
+    /* ============================================================
+       TOUCH / SWIPE
+       ============================================================ */
     let touchStartX = 0;
     document.addEventListener('touchstart', (e) => {
       touchStartX = e.changedTouches[0].clientX;
     }, { passive:true });
     document.addEventListener('touchend', (e) => {
       const distance = e.changedTouches[0].clientX - touchStartX;
-      if(Math.abs(distance) < 50) return;
-      if(distance < 0) showSlide(currentSlide + 1);
+      if (Math.abs(distance) < 50) return;
+      if (distance < 0) showSlide(currentSlide + 1);
       else showSlide(currentSlide - 1);
     }, { passive:true });
 
-    /* ===== MORPH TRANSITION ===== */
-    const pageTransition = document.getElementById('pageTransition');
-
+    /* ============================================================
+       MORPH TRANSITION
+       ============================================================ */
     window.addEventListener('load', () => {
       applyLanguage(currentLang);
       requestAnimationFrame(() => {
         pageTransition.classList.remove('active');
       });
-      /* أول Polaroid كيطلع بوحدها */
-      setTimeout(() => {
-        polaroid.classList.add('eject');
-        capyPhotographer.classList.add('shooting');
-      }, 350);
     });
 
-    /* ===== RETURN ===== */
     function goBack(){
       pageTransition.classList.add('active');
       setTimeout(() => {
         window.location.href = 'index.html#portfolio';
       }, 550);
     }
+    document.getElementById('backBtn').addEventListener('click', goBack);
   </script>
 
 </body>
